@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
@@ -62,7 +63,7 @@ fun TampilSiswa(
                 }
                 Spacer(modifier = Modifier.height(height = 10.dp))
                 Button(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier.width(250.dp),
                     onClick = onBackBtnClick){
                     Text(text = stringResource(id= R.string.back))
                 }
