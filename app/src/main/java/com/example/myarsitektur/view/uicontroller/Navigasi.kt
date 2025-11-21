@@ -44,6 +44,20 @@ fun DataApp(
             }
 
 
+            composable(Navigasi.DetailSiswa.name) {
+
+                val state = siswaViewModel.statusUI.collectAsState()
+
+                TampilSiswa (
+                    statusUISiswa = state.value,
+                    onBackBtnClick = {
+                        backToForm(navController)
+                    }
+                )
+            }
+        }
+    }
+}
 
 private fun backToForm(navController: NavHostController) {
     navController.popBackStack(
