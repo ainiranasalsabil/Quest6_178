@@ -40,13 +40,18 @@ fun TampilSiswa(
     Scaffold (modifier = Modifier,
         topBar = {
             TopAppBar(
-                title = { Text(text = stringResource(id=R.string.tampil), color = Color.White)},
-                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = colorResource(id = R.color.teal_700))
+                title = { Text(text = stringResource(id=R.string.data_siswa), color = Color.White)},
+                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = colorResource(
+                    id = R.color.teal_700)
+                ),
             )
         }){ isiRuang->
-        Column (modifier = Modifier.padding(paddingValues = isiRuang),
-            verticalArrangement = Arrangement.SpaceBetween){
-            Column(modifier = Modifier.padding(all = dimensionResource(id = R.dimen.padding_medium)),
+        Column (
+            modifier = Modifier.padding(paddingValues = isiRuang),
+            verticalArrangement = Arrangement.SpaceBetween
+        ){
+            Column(
+                modifier = Modifier.padding(all = dimensionResource(id = R.dimen.padding_medium)),
                 verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small))){
                 items.forEach { item ->
                     Column {
