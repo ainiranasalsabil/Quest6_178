@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.R
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -24,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.Color
+import com.example.myarsitektur.R
 import com.example.myarsitektur.model.Siswa
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -33,9 +33,9 @@ fun TampilSiswa(
     onBackBtnClick:()->Unit
 ){
     val items = listOf(
-        Pair(first = stringResource(), second = "Contoh Nama"),
-        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Lainnya"),
-        Pair(first = stringResource(id = R.string.alamat), second = "Yogyakarta"),
+        Pair(first = stringResource(id = R.string.nama_lengkap), second =statusUISiswa.nama),
+        Pair(first = stringResource(id = R.string.jenis_kelamin), second =statusUISiswa.gender),
+        Pair(first = stringResource(id = R.string.alamat), second =statusUISiswa.alamat),
     )
     Scaffold (modifier = Modifier,
         topBar = {
@@ -59,7 +59,7 @@ fun TampilSiswa(
                 Button(
                     modifier = Modifier.fillMaxSize(),
                     onClick = onBackBtnClick){
-                    Text(text = stringResource(id= R.string.black))
+                    Text(text = stringResource(id= R.string.back))
                 }
             }
         }
