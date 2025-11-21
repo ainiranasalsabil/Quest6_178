@@ -33,10 +33,17 @@ fun DataApp(
             modifier = Modifier.padding(innerPadding)
         ) {
 
+            composable(Navigasi.FormSiswa.name) {
+                FormSiswa(
+                    pilihanJK = listOf("Laki-laki", "Perempuan", "Lainnya"),
+                    onSubmitButtonClicked = { listData ->
+                        siswaViewModel.setSiswa(listData)
+                        navController.navigate(Navigasi.DetailSiswa.name)
+                    }
+                )
+            }
 
-        }
-    }
-}
+
 
 private fun backToForm(navController: NavHostController) {
     navController.popBackStack(
