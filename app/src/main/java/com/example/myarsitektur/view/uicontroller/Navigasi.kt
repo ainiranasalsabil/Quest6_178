@@ -25,6 +25,18 @@ fun DataApp(
     navController: NavHostController = rememberNavController(),
     siswaViewModel: SiswaViewModel = viewModel()
 ) {
+    Scaffold { innerPadding ->
+
+        NavHost(
+            navController = navController,
+            startDestination = Navigasi.FormSiswa.name,
+            modifier = Modifier.padding(innerPadding)
+        ) {
+
+
+        }
+    }
+}
 
 private fun backToForm(navController: NavHostController) {
     navController.popBackStack(
